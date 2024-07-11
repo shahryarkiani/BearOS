@@ -1,8 +1,9 @@
 BUILD_DIR = build
 SRC_DIR = src
 
-CFLAGS = -nostdlib -nostartfiles -ffreestanding -Iinclude -march=armv8-a -mfix-cortex-a53-835769
-SFLAGS = -Iinclude
+CDEFAULTFLAGS = -nostdlib -nostartfiles -ffreestanding -Iinclude -march=armv8-a -mfix-cortex-a53-835769
+CFLAGS = 
+SFLAGS = 
 
 QFLAGS =
 
@@ -16,11 +17,11 @@ clean:
 
 $(BUILD_DIR)/%-c.o: $(SRC_DIR)/%.c
 	mkdir -p $(@D)
-	aarch64-linux-gnu-gcc $(CFLAGS) -MMD -c $< -o $@
+	aarch64-linux-gnu-gcc $(CDEFAULTFLAGS) $(CFLAGS) -MMD -c $< -o $@
 
 $(BUILD_DIR)/%-S.o: $(SRC_DIR)/%.S
 	mkdir -p $(@D)
-	aarch64-linux-gnu-gcc $(SFLAGS) -MMD -c $< -o $@
+	aarch64-linux-gnu-gcc -Iinclude $(SFLAGS) -MMD -c $< -o $@
 
 C_FILES = $(wildcard $(SRC_DIR)/*.c)
 ASM_FILES = $(wildcard $(SRC_DIR)/*.S)

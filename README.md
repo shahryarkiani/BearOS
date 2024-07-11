@@ -5,8 +5,9 @@ This is a little side project of mine with a goal of building a multicore OS for
 
 - I'm doing this all on Debian 12 running on WSL2, but this workflow should work on most Linux distros.
 - To get the cross-compiler, you can run the equivalent of `apt-get install gcc-aarch64-linux-gnu` on your system.
-- You'll probably also want QEMU, so that you can run the OS on your own computer using `make run`. Just run the equivalent of `apt-get install qemu-system`.
+- You'll probably also want QEMU, so that you can run the OS on your own computer using `make run SFLAGS='-DQEMU=TRUE'`. Just run the equivalent of `apt-get install qemu-system`.
 - TODO: Add instructions for running on actual Rpi3
 
 # Progress
-- First Commit: Setup inital boot 
+- First Commit: Setup inital boot and mini UART, successfully loads and runs kernel_main() and writes to mini UART.
+- Second Commit: Add a utility function for printing strings that abstracts the hardware. Some makefile improvements
