@@ -6,6 +6,6 @@ timer_init:
 
 .globl timer_refresh
 timer_refresh:
-    ldr x0, =(1 << 24)
+    ldr x0, =(1 << 25)
     msr CNTP_TVAL_EL0, x0
     ret 
