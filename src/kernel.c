@@ -13,13 +13,14 @@ void kernel_main() {
   irq_vectors_init();
   puts("irq vector table initialized\n");
   irq_controller_enable();
+  puts("irq controller enabled\n");
   irq_enable();
   timer_init();
   timer_refresh();
 
   while (1) {
     i++;
-    sleep(1000000000);
+    sleep(10000000);
     puts("I'm still alive!!!\n");
   }
 }

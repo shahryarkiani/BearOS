@@ -11,6 +11,13 @@ void unimpl_irq_handle() {
     }
 }
 
+void irq_handle() {
+    puts("Handling timer irq\n");
+    timer_refresh();
+    irq_enable();
+    puts("Done handling\n");
+}
+
 void irq_controller_enable() {
     write32(BCM2837_CORE0_TIMER_INTERRUPT_CONTROL_REG, 0b10);
 }
