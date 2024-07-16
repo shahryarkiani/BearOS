@@ -13,3 +13,7 @@ sleep:
     subs x0, x0, #1
     bne sleep
     ret
+
+.globl wait
+wait:
+    wfi
