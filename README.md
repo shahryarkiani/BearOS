@@ -12,3 +12,4 @@ This is a little side project of mine with a goal of building a multicore OS for
 - First Commit: Setup inital boot and mini UART, successfully loads and runs kernel_main() and writes to mini UART.
 - Commit 2: Add a utility function for printing strings that abstracts the hardware. Some makefile improvements.
 - Commit 3: Implemented some additional startup configuration(so we only run in el1/el0). Created exception vector table to handle exceptions/interrupts. Need to actually implement the handlers and set up timer interrupt for core 0.
+- Commit 4: Configured generic timer and interrupt controlller, basic interrupts now working.

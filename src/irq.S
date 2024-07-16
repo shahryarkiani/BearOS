@@ -41,7 +41,7 @@ vectors:
     .balign 128 // SError/vSError
     b not_impl
 
-.global irq_vectors_init
+.globl irq_vectors_init
 irq_vectors_init:
     adr x0, vectors
     msr vbar_el1, x0
@@ -49,3 +49,14 @@ irq_vectors_init:
 
 not_impl:
     b unimpl_irq_handle
+
+.globl irq_disable
+irq_disable:
+    msr daifset, #0b10
+    ret
+
+.globl irq_enable
+irq_enable:
+    msr daifclr, #0b10
+    ret
+

@@ -2,6 +2,7 @@
 #include "uart.h"
 #include "util.h"
 #include "irq.h"
+#include "timer.h"
 #include <stdint.h>
 
 void kernel_main() {
@@ -11,6 +12,10 @@ void kernel_main() {
   puts("mini uart initialized!\n");
   irq_vectors_init();
   puts("irq vector table initialized\n");
+  irq_controller_enable();
+  irq_enable();
+  timer_init();
+  timer_refresh();
 
   while (1) {
     i++;

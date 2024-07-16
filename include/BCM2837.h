@@ -43,6 +43,8 @@
 #define BCM2837_AUX_MU_STAT_REG 0x3F215064
 #define BCM2837_AUX_MU_BAUD_REG 0x3F215068
 
+#define BCM2837_CORE0_TIMER_INTERRUPT_CONTROL_REG (0x40000040)
+
 #define BCM2837_GPFSEL0_V (pi3_gpio_base_vaddr + 0x0)
 #define BCM2837_GPSET0_V (pi3_gpio_base_vaddr + 0x1C)
 #define BCM2837_GPCLR0_V (pi3_gpio_base_vaddr + 0x28)
@@ -75,6 +77,7 @@
 #define BCM2837_AUX_MU_CNTL_REG_V (pi3_aux_base_vaddr + 0x60)
 #define BCM2837_AUX_MU_STAT_REG_V (pi3_aux_base_vaddr + 0x64)
 #define BCM2837_AUX_MU_BAUD_REG_V (pi3_aux_base_vaddr + 0x68)
+
 
 #define PLATFORM_PANIC_LOG_PADDR 0x3c0fc000
 #define PLATFORM_PANIC_LOG_SIZE 16384 // 16kb
